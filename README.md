@@ -45,7 +45,7 @@ before you start working on your changes.  Fire up the PHP web server:
 Or run it on the alternative port:
 
 ```
-./bin/phpserv -S localhost:9000
+./bin/phpserv -S localhost:8000
 ```
 
 In your browser navigate to [http://localhost:8000](http://localhost:8000).
