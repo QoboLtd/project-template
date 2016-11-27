@@ -6,6 +6,9 @@
  */
 class RoboFile extends \Robo\Tasks
 {
+    public $dotEnvDir = __DIR__;
+    public $dotEnvFile = '.env';
+
     /**
      * Figure out the location of the .env file
      *
@@ -13,7 +16,7 @@ class RoboFile extends \Robo\Tasks
      */
     protected function getDotEnvPath()
     {
-        $result = __DIR__ . DIRECTORY_SEPARATOR . '.env';
+        $result = $this->dotEnvDir . DIRECTORY_SEPARATOR . $this->dotEnvFile;
         return $result;
     }
 
@@ -61,7 +64,7 @@ class RoboFile extends \Robo\Tasks
                 Dotenv::makeMutable();
             }
 
-            Dotenv::load(__DIR__);
+            Dotenv::load($this->dotEnvDir, $this->dotEnvFile);
 
             if ($force) {
                 Dotenv::makeImmutable();
@@ -302,7 +305,7 @@ class RoboFile extends \Robo\Tasks
     {
         $this->say("Deleting .env file");
 
-        $dotenvPath = __DIR__ . DIRECTORY_SEPARATOR . '.env';
+        $dotenvPath = $this->getDotEnvPath();
         if (!file_exists($dotenvPath)) {
             $this->yell("Failed to delete .env file. File not found [$dotenvPath].");
         }
