@@ -5,7 +5,8 @@
 	"require": {
 		"php": ">=5.6.0",
 		"qobo/phake-builder": "~2.0",
-		"pyrech/composer-changelogs": "~1.4"
+		"pyrech/composer-changelogs": "~1.4",
+		"codegyre/robo": "^0.7.2"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "*",
