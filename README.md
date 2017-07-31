@@ -17,6 +17,17 @@ git commit -m "Initial commit"
 composer exec -- phake dotenv:create
 ```
 
+Alternatively, you can just merge this project template
+into your project:
+
+```bash
+mkdir example.com
+cd example.com
+git init
+# It's always better to pull a specific tag/version
+git pull git@github.com:QoboLtd/project-template.git master
+```
+
 Update
 ------
 
